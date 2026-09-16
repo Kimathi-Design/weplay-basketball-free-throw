@@ -1,0 +1,35 @@
+{
+  "totalShots": 5,
+  "seconds": 20,
+  "lives": 3,
+  "pointsPerMiss": 5,
+  "pointsPerGoal": 10,
+  "moveHoop": true,
+  "tweenHoop": true,
+  "continuousMove": true,
+  "hoopSpeed": 1,
+  "mode": "FIXED_SHOTS",
+  "debug": false,
+  "text": {
+    "score": "HIT!",
+    "miss": "Missed!",
+    "end": "NO MORE SHOTS!"
+  },
+  "images": {
+    "atlas-json": "prod/basketball/data/assets/front/sprites/assets.json",
+    "ball": "prod/basketball/data/assets/front/sprites/basketball.png",
+    "net": "prod/basketball/data/assets/front/sprites/basketball-net.png",
+    "board": "prod/basketball/data/assets/front/sprites/basketball-board.png",
+    "crowd": "prod/basketball/data/assets/front/sprites/crowd.png",
+    "hoarding": "prod/basketball/data/assets/front/sprites/basketball-hoarding.jpg",
+    "pitch": "prod/basketball/data/assets/front/sprites/basketball-court.jpg",
+    "logo": "prod/basketball/data/assets/front/sprites/logo.png"
+  },
+  "popups": [],
+  "_help": {
+    "title": "How To Play",
+    "image": "prod/basketball/data/assets/front/sprites/howtoplay.png",
+    "description": "Swipe or drag the ball toward the hoop. Hold to set power and release to shoot. Score as many baskets as you can!",
+    "button": "fas:play"
+  }
+}

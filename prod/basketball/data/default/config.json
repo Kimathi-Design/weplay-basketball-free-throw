@@ -1,0 +1,95 @@
+{
+    "dev": {
+        "databoxes": {
+            "selector": "app-databox-container",
+            "componentArray": [
+                {
+                    "selector": "app-databox-score",
+                    "template": "Score: %SCORE%",
+                    "templateSingular": "Score: %SCORE%",
+                    "templateIdle": "Score: -"
+                },
+                {
+                    "selector": "app-databox-attempts-icon",
+                    "state": {
+                        "states": [
+                            {
+                                "color": "accent",
+                                "name": "far:circle",
+                                "state": "default"
+                            },
+                            {
+                                "color": "accent",
+                                "name": "fas:circle",
+                                "state": "tie"
+                            },
+                            {
+                                "color": "accent",
+                                "name": "fas:circle-check",
+                                "state": "positive"
+                            },
+                            {
+                                "color": "accent",
+                                "name": "fas:circle-xmark",
+                                "state": "negative"
+                            }
+                        ]
+                    },
+                    "startingState": ["default", "default", "default", "default", "default"]
+                }
+            ]
+        }
+    },
+    "help": {
+        "title": "This is a Help Dialog",
+        "image": "data/assets/front/sprites/howtoplay.png",
+        "description": "Shoot bubbles of 3 or more matching colours to pop them. The level is completed when all bubbles are popped.",
+        "button": "OK"
+    },
+    "images": {
+        "atlas-json": "data/assets/front/sprites/assets.json",
+        "ball": "data/assets/front/sprites/basketball.png",
+        "net": "data/assets/front/sprites/basketball-net.png",
+        "board": "data/assets/front/sprites/basketball-board.png",
+        "crowd": "data/assets/front/sprites/crowd.png",
+        "hoarding": "data/assets/front/sprites/basketball-hoarding.jpg",
+        "pitch": "data/assets/front/sprites/basketball-court.jpg",
+        "logo": "data/assets/front/sprites/logo.png"
+    },
+    "text": {
+        "score": "HIT!",
+        "miss": "Missed!",
+        "end": "NO MORE SHOTS!"
+    },
+    "totalShots": 5,
+    "pointsPerGoal": 10,
+    "pointsPerMiss": 5,
+    "moveHoop": true,
+    "tweenHoop": true,
+    "continuousMove": true,
+    "hoopSpeed": 1,
+    "seconds": 20,
+    "lives": 3,
+    "mode": "FIXED_SHOTS",
+    "debug": false,
+    "popups": [
+        {
+            "seconds": 10,
+            "content": {
+                "title": "10 seconds has passed!",
+                "image": "data/assets/front/sprites/howtoplay.png",
+                "description": "don't run out of time!",
+                "button": "OK"
+            }
+        },
+        {
+            "points": 10,
+            "content": {
+                "title": "You have scored 10 points",
+                "image": "data/assets/front/sprites/howtoplay.png",
+                "description": "you are so clever",
+                "button": "OK"
+            }
+        }
+    ]
+}
