@@ -21,7 +21,7 @@
     "net": "/prod/basketball/data/assets/front/sprites/basketball-net.png",
     "board": "/prod/basketball/data/assets/front/sprites/basketball-board.png",
     "crowd": "/prod/basketball/data/assets/front/sprites/crowd.png",
-    "hoarding": "/prod/basketball/data/assets/front/sprites/basketball-hoarding.jpg",
+    "hoarding": "/prod/basketball/data/assets/front/sprites/basketball-hoarding-weplay.jpg",
     "pitch": "/prod/basketball/data/assets/front/sprites/basketball-court.jpg",
     "logo": "/prod/basketball/data/assets/front/sprites/logo.png"
   },
