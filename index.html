@@ -182,7 +182,9 @@
         flex-direction: column;
         gap: 0;
         flex: 0 0 auto;
-        padding-top: 8px;
+        /* Leave room above for live WePlay usernames / overlays */
+        padding-top: 72px;
+        padding-bottom: 4px;
       }
       .play-actions {
         display: none;
@@ -251,7 +253,7 @@
         flex: 1 1 auto;
         min-height: 0;
         width: 100%;
-        background: #0a0a0a;
+        background: #000;
         overflow: hidden;
       }
       #game-frame {
@@ -260,7 +262,7 @@
         width: 100% !important;
         height: 100% !important;
         border: 0;
-        background: #0a0a0a;
+        background: #000;
         opacity: 0;
         transition: opacity 0.15s ease;
       }
@@ -475,7 +477,7 @@
                   id="game-frame"
                   title="Basketball free throw"
                   allow="autoplay"
-                  style="background:#0a0a0a;color-scheme:dark"
+                  style="background:#000;color-scheme:dark"
                 ></iframe>
                 <div id="text-host" aria-live="polite"></div>
                 <div id="modal-help" class="play-modal" aria-hidden="true">
@@ -537,7 +539,9 @@
         var heroBarDone = false;
         var gameReady = false;
         var loadSession = 0;
-        var HERO_BAR_MIN_MS = 900;
+        var HERO_BAR_MIN_MS = 3200;
+        var HERO_READY_FALLBACK_MS = 4500;
+        var heroReadyFallbackTimer = null;
 
         function showScreen(name) {
           if (screenHero) {
@@ -560,6 +564,10 @@
           if (heroLoadRaf != null) {
             window.cancelAnimationFrame(heroLoadRaf);
             heroLoadRaf = null;
+          }
+          if (heroReadyFallbackTimer != null) {
+            window.clearTimeout(heroReadyFallbackTimer);
+            heroReadyFallbackTimer = null;
           }
         }
 
@@ -593,6 +601,7 @@
             var t = Math.min(1, (now - started) / HERO_BAR_MIN_MS);
             var eased = 1 - Math.pow(1 - t, 2.2);
             if (t < 1) {
+              // Hold under 100% until the engine is actually ready
               setHeroProgress(Math.round(eased * 92));
               heroLoadRaf = window.requestAnimationFrame(tick);
               return;
@@ -679,8 +688,9 @@
             },
             frame
           );
-          // Engine paint usually lands quickly after iframe load
-          window.setTimeout(markGameReady, 180);
+          // Don't leave hero early — wait for real engine traffic, with a late fallback
+          if (heroReadyFallbackTimer != null) window.clearTimeout(heroReadyFallbackTimer);
+          heroReadyFallbackTimer = window.setTimeout(markGameReady, HERO_READY_FALLBACK_MS);
         }
 
         function beginGameLoad() {
