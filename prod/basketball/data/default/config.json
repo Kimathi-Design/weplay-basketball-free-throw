@@ -54,7 +54,7 @@
         "crowd": "data/assets/front/sprites/crowd.png",
         "hoarding": "data/assets/front/sprites/basketball-hoarding-weplay-v2.jpg",
         "pitch": "data/assets/front/sprites/basketball-court.jpg",
-        "logo": "data/assets/front/sprites/logo-challenge.webp"
+        "logo": "data/assets/front/sprites/logo.png"
     },
     "text": {
         "score": "HIT!",
