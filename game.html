@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="color-scheme" content="dark" />
     <meta name="rocketloader" content="false" />
-    <base href="/" />
     <title>Basketball — Free Throw</title>
     <style>
       html,
@@ -15,7 +14,7 @@
         background: #000 !important;
       }
     </style>
-    <link href="/prod/basketball/bundles/index.css" rel="stylesheet" />
+    <link href="prod/basketball/bundles/index.css" rel="stylesheet" />
     <style>
       html,
       body {
@@ -57,6 +56,13 @@
         align-items: center;
         justify-content: center;
         background: #000 !important;
+      }
+      html.embed,
+      html.embed body,
+      html.embed #system-container,
+      html.embed #system-container.system-container,
+      html.embed canvas {
+        background: transparent !important;
       }
       html.embed canvas {
         width: 100% !important;
@@ -137,10 +143,13 @@
     <div data-iframe-height></div>
     <script data-cfasync="false">
       (function () {
+        var bg = document.documentElement.classList.contains("embed") ? "transparent" : "#000";
         function keepBlack() {
           if (!document.body) return;
-          document.documentElement.style.backgroundColor = "#000";
-          document.body.style.backgroundColor = "#000";
+          document.documentElement.style.backgroundColor = bg;
+          document.body.style.backgroundColor = bg;
+          var sc = document.getElementById("system-container");
+          if (sc) sc.style.backgroundColor = bg;
         }
         keepBlack();
         var mo = new MutationObserver(keepBlack);
@@ -155,7 +164,7 @@
       })();
     </script>
     <!-- Basketball Digita engine is self-contained (no Detector/cannon/smoothie) -->
-    <script data-cfasync="false" src="/prod/basketball/bundles/index.js?v=noforcemeter"></script>
+    <script data-cfasync="false" src="prod/basketball/bundles/index.js?v=noforcemeter"></script>
     <script data-cfasync="false">
       (function () {
         var sent = false;

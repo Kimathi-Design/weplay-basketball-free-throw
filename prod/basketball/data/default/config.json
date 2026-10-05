@@ -51,10 +51,10 @@
         "ball": "data/assets/front/sprites/basketball.png",
         "net": "data/assets/front/sprites/basketball-net.png",
         "board": "data/assets/front/sprites/basketball-board.png",
-        "crowd": "data/assets/front/sprites/crowd.png",
-        "hoarding": "data/assets/front/sprites/basketball-hoarding-weplay-v2.jpg",
-        "pitch": "data/assets/front/sprites/basketball-court.jpg",
-        "logo": "data/assets/front/sprites/logo.png"
+        "crowd": "data/assets/front/sprites/crowd-v2.webp",
+        "hoarding": "data/assets/front/sprites/basketball-hoarding-v3.webp",
+        "pitch": "data/assets/front/sprites/basketball-court-v2.webp",
+        "logo": "data/assets/front/sprites/logo-game-v2.png"
     },
     "text": {
         "score": "HIT!",
