@@ -20,7 +20,7 @@
     "ball": "prod/basketball/data/assets/front/sprites/basketball.png",
     "net": "prod/basketball/data/assets/front/sprites/basketball-net.png",
     "board": "prod/basketball/data/assets/front/sprites/basketball-board.png",
-    "crowd": "prod/basketball/data/assets/front/sprites/crowd-v2.webp",
+    "crowd": "prod/basketball/data/assets/front/sprites/crowd-v3.webp",
     "hoarding": "prod/basketball/data/assets/front/sprites/basketball-hoarding-v3.webp",
     "pitch": "prod/basketball/data/assets/front/sprites/basketball-court-v2.webp",
     "logo": "prod/basketball/data/assets/front/sprites/logo-game-v2.png"
